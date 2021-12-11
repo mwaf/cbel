@@ -1,0 +1,592 @@
+.FASE0000 [
+  .DATOSFICHEROSMISION [ 
+    .VOLUMENES MAPA0000.VOL
+    .SECTORES MAPA0000.SEC
+    .ESTATICODINAMICOS CHOQ0000.VOL
+    .TEXTOSMISSION MAPA0000.STR
+    .INTROSCRIPT BRIE0001.SCR
+    .BOXTOOLTIP MAPA0000.TIP
+  ]
+  .BRIEFING [ .TEXTOS MB00.STR ]
+  .SENSORES_SND_ZONA [ [ .ZONA CAMP .MENSAJE REAC ] ]
+  .MAP [ .SCALE 0.053176 .XY [ 55 26 ] .BITMAP LIBR0000.RLE ]
+  .WATER [ 
+    .BMP MAR01.BMP
+    .BMPSRC MAR0SRC.BMP
+    .BMPDST MAR0DST.BMP
+    .VELINC 0
+    .ANGINC 220
+    .SININC 1
+  ]
+  .INTENDENCIA 0
+  .INTENDENCIAINFO [
+    .PUNTUACIONES [ .PAR_TICKS 3100 ]
+    .EXITPOINTS [
+      [ 275 -45 0 ]
+      [ -27 3111 0 ]
+      [ 1121 3855 0 ]
+      [ 1489 1688 0 ]
+      [ 1462 26 0 ]
+    ]
+    .OBJETIVOS [ [ .OBJETIVO RADIOEXP ] ]
+  ]
+  .XY [ 1396 1839 ]
+  .PATRULLAS [ 
+    [ 
+      .NSOLDIERS 2
+      .TOKEN PATR_NORTE
+      .HOME CARCEL_EXT
+      .JAIL CARCEL_EXT
+      .XYZ [ 267 211 0 ]
+      .ANGULO 0
+      .RUTADEF [ 
+        [ 
+          .TIPORUTA LOOP
+          .RUTA [ 
+            [ .XYZ [ 267 211 0 ] ]
+            [ .XYZ [ 170 287 0 ] ]
+            [ .XYZ [ 206 530 0 ] ]
+            [ .XYZ [ 431 533 0 ] ]
+            [ .XYZ [ 505 309 0 ] ]
+          ]
+          .NOMBRE RUTA_1
+          .VEL [ ]
+        ]
+      ]
+      .ANIMCABO ALEGABAR
+      .ANIMSOLDADO ALEGABAR
+      .DISPARARCABO METRALLETA
+      .DISPARARSOLDADO METRALLETA
+      .HOME BUNKER
+      .REGENERATEPATROL 0
+      .SIGUEHUELLAS 1
+      .REGENERATE 1
+      .LOOKBACK 1
+      .NONSTOP 0
+      .STARTATHOME 0
+      .ANIMPAL -1
+      .VIGILARDEF [ .ANGBARRIDO 50 .DEMORA 50 ]
+    ]
+    [ 
+      .NSOLDIERS 4
+      .TOKEN PATR_NORTE
+      .HOME CARCEL_EXT
+      .JAIL CARCEL_EXT
+      .XYZ [ 500 500 0 ]
+      .ANGULO 0
+      .RUTADEF [ 
+        [ 
+          .TIPORUTA LOOP
+          .RUTA [ 
+            [ .XYZ [ 500 500 0 ] ]
+            [ .XYZ [ 267 211 0 ] ]
+            [ .XYZ [ 170 287 0 ] ]
+            [ .XYZ [ 215 495 0 ] ]
+            [ .XYZ [ 389 480 0 ] ]
+            [ .XYZ [ 500 500 0 ] ]
+          ]
+          .NOMBRE RUTA_1
+          .VEL [ ]
+        ]
+      ]
+      .ANIMCABO ALEGABAR
+      .ANIMSOLDADO ALEGABAR
+      .DISPARARCABO METRALLETA
+      .DISPARARSOLDADO METRALLETA
+      .HOME BUNKER
+      .REGENERATEPATROL 0
+      .SIGUEHUELLAS 1
+      .REGENERATE 1
+      .LOOKBACK 1
+      .NONSTOP 0
+      .STARTATHOME 0
+      .ANIMPAL -1
+      .VIGILARDEF [ .ANGBARRIDO 50 .DEMORA 50 ]
+    ]
+    [ 
+      .TOKEN pat_cond0
+      .NSOLDIERS 1
+      .RUTADEF [ 
+        [ 
+          .NOMBRE RUTA1
+          .TIPORUTA PINGPONG
+          .RUTA [ 
+            [ .XYZ [ 862 2938 0 ] ]
+            [ .XYZ [ 1171 3173 0 ] .ESPERA 125 .ANGULO 30 ]
+          ]
+          .VEL [ ]
+        ]
+      ]
+      .REGENERATEPATROL 0
+      .SIGUEHUELLAS 1
+      .REGENERATE 0
+      .LOOKBACK 1
+      .NONSTOP 1
+      .STARTATHOME 0
+      .ANIMPAL -1
+      .VIGILARDEF [ .ANGBARRIDO 50 .DEMORA 50 ]
+      .ANIMCABO ALEGABAR
+      .ANIMSOLDADO ALEGABAR
+      .DISPARARCABO METRALLETA
+      .DISPARARSOLDADO METRALLETA
+      .XYZ [ 862 2938 0 ]
+    ]
+  ]
+  .ELEMENTOS [ 
+    [ 
+      .TOKEN BANQUETA
+      .CLASS BICHO
+      .BANDO NEUTRAL
+      .ANGULO 0
+      .VOLCOLISION [ CILINDRO [ .R 10 .H 10 ] ]
+      .GRAPH [ 
+        .ANIM BANQUETA
+        .RENDERVOL [ CILINDRO [ .R 10 .H 10 ] ]
+      ]
+      .LISTAS CHOC
+      .MASA 50
+      .OCLU 0
+      .DETECTAEXPLOSION 0
+      .XYZ [ 309 384 0 ]
+      .SEHUNDE 0
+      .NOSOLIDO 0
+      .BUILDING 0
+      .ESCONDUCTOR 0
+      .CONTENEDOR 0
+    ]
+    [ 
+      .CLASS BICHOALIADO
+      .TOKEN LANCHERO
+      .BANDO ALIADO
+      .XYZ [ 1301 1200 0 ]
+      .ANGULO 135
+      .VOLCOLISION [ CILINDRO [ .R 10 .H 40 ] ]
+      .LISTAS [ EJEC CHOC VISI SELE ]
+      .MASA 100
+      .SEHUNDE 1
+      .GRAPH [ 
+        .ANIM LANCHIST
+        .RENDERVOL [ CILINDRO [ .R 10 .H 40 ] ]
+      ]
+      .ORGANOS [ .MOTOR [ MotorAliado [ ] ] ]
+      .ACCIONES [ 
+        [ acMuerte [ .CARISMA 999 ] ]
+        [ acUsaHab [ .CARISMA 300 .HABILIDAD BALSA ] ]
+        [ auAcuchillar [ .CARISMA 200 ] ]
+        [ AuBucear [ .CARISMA 200 ] ]
+        [ auEscalar [ .CARISMA 200 ] ]
+        [ auUsarVehiculo [ .CARISMA 200 .VEHICULOS BALSA ] ]
+        [ 
+          auDisparar
+          [ .CARISMA 200 .ARMAS [ ARPON ] ]
+        ]
+        [ 
+          auManejaBalsa
+          [ 
+            .CARISMA 200
+            .OTOK BALSA
+            .ITTOK IT_BALSA
+            .BICHOSOLTAR LANZABARCA
+          ]
+        ]
+        [ auBeHome [ .CARISMA 200 ] ]
+        [ auUsar [ .CARISMA 200 ] ]
+        [ auCoger [ .CARISMA 200 ] ]
+        [ auGoto [ .CARISMA 200 ] ]
+        [ AcDetenido [ .CARISMA 100 ] ]
+        [ acDejarRastro [ .CARISMA 1 ] ]
+        [ acPisar [ .CARISMA 1 ] ]
+      ]
+      .CONTENEDOR 1
+      .OCLU 0
+      .DETECTAEXPLOSION 0
+      .NOAGACHA 0
+    ]
+    [ 
+      .CLASS BICHOALIADO
+      .TOKEN COMANDO
+      .BANDO ALIADO
+      .XYZ [ 250 3300 0 ]
+      .ANGULO 135
+      .VOLCOLISION [ CILINDRO [ .R 10 .H 40 ] ]
+      .LISTAS [ EJEC CHOC VISI SELE ]
+      .ACCIONES [ 
+        [ acMuerte [ .CARISMA 999 ] ]
+        [ acUsaHab [ .CARISMA 300 ] ]
+        [ auAcuchillar [ .CARISMA 200 ] ]
+        [ auUsar [ .CARISMA 200 ] ]
+        [ auCoger [ .CARISMA 200 ] ]
+        [ auUsarVehiculo [ .CARISMA 200 ] ]
+        [ auBeHome [ .CARISMA 200 ] ]
+        [ auDisparar [ .CARISMA 200 .ARMAS ] ]
+        [ auEscalar [ .CARISMA 200 .ESCALAMUROS SI ] ]
+        [ auCogeBarril [ .CARISMA 200 ] ]
+        [ auGoto [ .CARISMA 200 ] ]
+        [ AuGarfio [ .CARISMA 200 ] ]
+        [ 
+          auManejaSegnuelo
+          [ 
+            .CARISMA 200
+            .OBJETOS [ [ .TOKEN SEGNUELOUNO .ACTIVABLE SI ] ]
+          ]
+        ]
+        [ AcDetenido [ .CARISMA 100 ] ]
+        [ acPisar [ .CARISMA 1 ] ]
+        [ acDejarRastro [ .CARISMA 1 ] ]
+        [ AuCamuflarse [ .CARISMA 200 ] ]
+      ]
+      .MASA 100
+      .SEHUNDE 1
+      .GRAPH [ .ANIM COMANDO .RENDERVOL [ CILINDRO [ .R 10 .H 40 ] ] ]
+      .ORGANOS [ .MOTOR [ MotorAliado [ ] ] ]
+      .CONTENEDOR 1
+      .OCLU 0
+      .DETECTAEXPLOSION 0
+      .ELEMENTOS [ 
+        [ 
+          .CLASS MACRO
+          .MACRO SEGNUELO
+          .TOKEN SEGNUELOUNO
+          .INTERVALOSND 30
+        ]
+      ]
+      .NOAGACHA 0
+    ]
+    [ 
+      .CLASS BICHOALIADO
+      .TOKEN FRANCOT
+      .BANDO ALIADO
+      .XYZ [ 478 1852 0 ]
+      .ANGULO 135
+      .VOLCOLISION [ CILINDRO [ .R 10 .H 40 ] ]
+      .LISTAS [ EJEC CHOC VISI SELE ]
+      .ACCIONES [ 
+        [ acMuerte [ .CARISMA 999 ] ]
+        [ acUsaHab [ .CARISMA 300 ] ]
+        [ auEscalar [ .CARISMA 200 ] ]
+        [ auUsarVehiculo [ .CARISMA 200 ] ]
+        [ 
+          auDisparar
+          [ 
+            .CARISMA 200
+            .ARMAS [ MIRILLA ]
+            .MUNMIRILLA 3
+            .MUNFUSIL 10
+          ]
+        ]
+        [ auBeHome [ .CARISMA 200 ] ]
+        [ auUsar [ .CARISMA 200 .FLAGSUSAR FL_BALASFRANCOT ] ]
+        [ auCoger [ .CARISMA 200 .FLAGSRECOGER FL_BALASFRANCOT ] ]
+        [ auGoto [ .CARISMA 200 ] ]
+        [ acDejarRastro [ .CARISMA 1 ] ]
+        [ AcDetenido [ .CARISMA 100 ] ]
+        [ acPisar [ .CARISMA 1 ] ]
+      ]
+      .MASA 100
+      .SEHUNDE 1
+      .GRAPH [ .ANIM FRANCO .RENDERVOL [ CILINDRO [ .R 10 .H 40 ] ] ]
+      .ORGANOS [ .MOTOR [ MotorAliado [ ] ] ]
+      .OCLU 0
+      .DETECTAEXPLOSION 0
+      .CONTENEDOR 0
+      .NOAGACHA 0
+    ]
+    [ 
+      .CLASS MACRO
+      .MACRO METRBASE
+      .TOKEN METRBASE
+      .XYZ [ 80 596 0 ]
+    ]
+    [ 
+      .CLASS MACRO
+      .MACRO CAJABALA
+      .TOKEN BALASFRANCOTIRADOR
+      .XYZ [ 1400 3460 0 ]
+      .BALAS 5
+    ]
+    [ 
+      .CLASS MACRO
+      .MACRO CISTERNA
+      .TOKEN CISTERNA
+      .XYZ [ 75 980 0 ]
+      .ANGULO 0
+      .DISPAROS 1
+    ]
+    [ 
+      .CLASS MACRO
+      .TOKEN VIGI_COM0
+      .MACRO BAP2
+      .XYZ [ 490 2870 0 ]
+      .Angulo 30
+      .Grafico ALEMAN2
+      .AcPatrulla [ 
+        acPatrulla
+        [ 
+          .CARISMA 200
+          .PATRULLA [ 
+            [ 
+              .RUTA [ 
+                [ .XYZ [ 489 2870 0 ] ]
+                [ .XYZ [ 216 3172 0 ] ]
+                [ .XYZ [ 322 3506 0 ] ]
+              ]
+              .VEL 2
+              .TIPORUTA PINGPONG
+              .NOMBRE PATRULLA1
+            ]
+          ]
+        ]
+      ]
+    ]
+    [ 
+      .CLASS MACRO
+      .TOKEN VIGI_COM1
+      .MACRO BANPE2
+      .XYZ [ 592 2767 0 ]
+      .Angulo 30
+      .Grafico ALEMAN2
+    ]
+    [ 
+      .CLASS MACRO
+      .TOKEN VIGI_LANCH0
+      .MACRO BAP2
+      .XYZ [ 1039 1263 0 ]
+      .Angulo 10
+      .Grafico ALEMAN2
+      .AcPatrulla [ 
+        acPatrulla
+        [ 
+          .CARISMA 200
+          .PATRULLA [ 
+            [ 
+              .RUTA [ [ .XYZ [ 1039 1263 0 ] ] [ .XYZ [ 1394 936 0 ] ] ]
+              .VEL 2
+              .TIPORUTA PINGPONG
+              .NOMBRE PATRULLA1
+            ]
+          ]
+        ]
+      ]
+    ]
+    [ 
+      .CLASS MACRO
+      .TOKEN VIGI_LANCH2
+      .MACRO BAP2
+      .XYZ [ 1344 1715 0 ]
+      .Angulo 30
+      .Grafico ALEMAN2
+      .AcPatrulla [ 
+        acPatrulla
+        [ 
+          .CARISMA 200
+          .PATRULLA [ 
+            [ 
+              .RUTA [ 
+                [ .XYZ [ 1344 1715 0 ] ]
+                [ .XYZ [ 1110 1474 0 ] ]
+              ]
+              .VEL 1.5
+              .TIPORUTA PINGPONG
+              .NOMBRE PATRULLA1
+            ]
+          ]
+        ]
+      ]
+    ]
+    [ 
+      .CLASS MACRO
+      .TOKEN VIGI_LANCH3
+      .MACRO BANPE2
+      .XYZ [ 1009 1295 0 ]
+      .Angulo 165
+      .Grafico ALEMAN2
+    ]
+    [ 
+      .CLASS MACRO
+      .TOKEN CUARTEL0
+      .MACRO BANPE2
+      .XYZ [ 881 320 0 ]
+      .Angulo 220
+      .Grafico ALEMAN2
+    ]
+    [ 
+      .CLASS MACRO
+      .MACRO CAMION_V
+      .TOKEN CAMION
+      .XYZ [ 1140 3005 0 ]
+      .ANGULO 220
+      .AngMarchaAtras 110
+    ]
+    [ 
+      .CLASS BICHO
+      .BANDO NEUTRAL
+      .TOKEN RADIOEXP
+      .DETECTAEXPLOSION 1
+      .XYZ [ 298 357 0 ]
+      .ANGULO 30
+      .VOLCOLISION [ CILINDRO [ .R 10 .H 40 ] ]
+      .ACCIONES [ 
+        [ 
+          acExplotaCasa
+          [ 
+            .CARISMA 100
+            .RADIO 150
+            .DANO 200
+            .TIEMPO 50
+            .VOLESTATICO SI
+            .CAMBIATILES [ 
+              [ .MAPA RADIO01A .TILES [ RADI0000.RLE NADA ] ]
+              [ .MAPA RADIO01B .TILES [ RADI0001.RLE NADA ] ]
+              [ .MAPA RADIO01C .TILES [ SRAD0000.RLE NADA ] ]
+            ]
+            .VOLTOKENLLAMAS RADIO01EXP1
+          ]
+        ]
+      ]
+      .MASA 0
+      .SEHUNDE 0
+      .OCLU 0
+      .BUILDING 0
+      .ESCONDUCTOR 0
+      .CONTENEDOR 0
+      .TIP A012
+    ]
+    [ 
+      .CLASS MACRO
+      .TOKEN CUARTEL1
+      .MACRO BAP2
+      .XYZ [ 1255 168 0 ]
+      .Angulo 30
+      .Grafico ALEMAN2
+      .AcPatrulla [ 
+        acPatrulla
+        [ 
+          .CARISMA 200
+          .PATRULLA [ 
+            [ 
+              .RUTA [ [ .XYZ [ 1255 168 0 ] ] [ .XYZ [ 1419 180 0 ] ] ]
+              .VEL 1.5
+              .TIPORUTA PINGPONG
+              .NOMBRE PATRULLA1
+            ]
+          ]
+        ]
+      ]
+    ]
+    [ 
+      .CLASS MACRO
+      .TOKEN ALBERGUE01
+      .MACRO CASA
+      .XYZ [ 383 894 12 ]
+      .AcCasaLogica [ acCasaLogica [ .TOKENCASA CASA01A ] ]
+    ]
+    [ 
+      .CLASS MACRO
+      .MACRO CASA
+      .TOKEN ALBERGUE02
+      .XYZ [ 812 475 8 ]
+      .BOXSELECCIONREL [ -35 -45 30 40 ]
+      .AcCasaLogica [ acCasaLogica [ .TOKENCASA CASA02A ] ]
+    ]
+    [ 
+      .CLASS MACRO
+      .TOKEN ALBERGUE03
+      .MACRO CASA
+      .XYZ [ 708 2674 0 ]
+      .AcCasaLogica [ acCasaLogica [ .TOKENCASA CASA03A ] ]
+      .BOXSELECCIONREL [ -15 -45 31 50 ]
+    ]
+    [ 
+      .CLASS MACRO
+      .TOKEN BARRIL1
+      .MACRO BARRIL
+      .XYZ [ 621 726 0 ]
+    ]
+    [ 
+      .CLASS MACRO
+      .TOKEN BARRIL2
+      .MACRO BARRIL
+      .XYZ [ 80 700 0 ]
+    ]
+    [ 
+      .CLASS MACRO
+      .TOKEN BALSA
+      .MACRO ZODIAC
+      .XYZ [ 500 1500 0 ]
+      .Angulo 135
+      .VolumenAgua BASE
+      .ColorBurbujas [ 0 63 63 ]
+      .Bando NEUTRAL
+    ]
+    [ 
+      .CLASS MACRO
+      .TOKEN AMETRALLADORA2
+      .MACRO NIDOMET
+      .XYZ [ 80 596 0 ]
+      .Angulo -60
+      .TokenArtillero ART_AMETRALLADORA
+      .AngBarrido 60
+      .grafico CABO
+      .Giro 180
+    ]
+    [ 
+      .CLASS MACRO
+      .TOKEN TESTIGO
+      .MACRO TESTIGO
+      .XYZ [ 467 522 0 ]
+    ]
+  ]
+  .INTERFACE [ 
+    .SUBINTERFACES [ 
+      [ 
+        SUBINTERFACEMULTIPLE
+        [ 
+          .TOKEN MULTIPLE
+          .ELEMUSABLES [ CAMION BALSA ALBERGUE01 ALBERGUE02 ALBERGUE03 ]
+        ]
+      ]
+      [ 
+        SUBINTERFACEALIADO
+        [ 
+          .TOKEN COMANDO
+          .CARETO CARA0001.RLE
+          .ITEMS [ 
+            [ .TOKEN IT_CUCHILLO ]
+            [ .TOKEN IT_MANO ]
+            [ .TOKEN IT_ACTSENUELOOFF .DISPONIBLE NO ]
+            [ .TOKEN IT_ACTSENUELOON .DISPONIBLE NO ]
+          ]
+        ]
+      ]
+      [ 
+        SUBINTERFACEALIADO
+        [ 
+          .TOKEN FRANCOT
+          .CARETO CARA0005.RLE
+          .ITEMS [ 
+            [ .TOKEN IT_MIRILLA ]
+            [ .TOKEN IT_MANO ]
+          ]
+        ]
+      ]
+      [ 
+        SUBINTERFACEALIADO
+        [ 
+          .TOKEN LANCHERO
+          .CARETO CARA0004.RLE
+          .ITEMS [ 
+            [ .TOKEN IT_CUCHILLO ]
+            [ .TOKEN IT_BALSA .DISPONIBLE NO ]
+            [ .TOKEN IT_MANO ]
+            [ .TOKEN IT_TRAJEBUZO ]
+          ]
+        ]
+      ]
+    ]
+    .INFOCARAS [ 
+      [ CARA [ .TOKEN COMANDO ] ]
+      [ CARA [ .TOKEN FRANCOT ] ]
+      [ CARA [ .TOKEN LANCHERO ] ]
+    ]
+  ]
+]
